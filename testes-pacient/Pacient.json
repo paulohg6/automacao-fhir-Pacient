@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "eebdc800-3480-4646-a060-d2b263c7d58c",
+		"name": "FHIRResoursePacient",
+		"description": "Colection de testes do FHIR do resourse Pacient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPaciente",
+			"item": [
+				{
+					"name": "RecuperandoPacientePeloIDValido2719516Reposta200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "711d4b75-7fd6-4186-9294-dfbf00afc97d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://fhirtutorial.example/patient\",\r\n      \"value\": \"12345\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Chalmers\",\r\n      \"given\": [\r\n        \"Paulo\",\r\n        \"Gonçalves\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5555 6473\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/Patient/2719516",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"Patient",
+								"2719516"
+							]
+						},
+						"description": "O Retorno da informação do paciente 2719516"
+					},
+					"response": []
+				}
+			],
+			"description": "-- Descricação mais detalhada do que foi pensado nos testes do verbo GET para o resource Pacient",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PostCreatePacient",
+			"item": [
+				{
+					"name": "CreatePacientDadosObrigatirosPreenchidosResposta201",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5973a6a2-6702-40bb-a9c5-622c8a13dd90",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://fhirtutorial.example/patient\",\r\n      \"value\": \"12345\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Chalmers\",\r\n      \"given\": [\r\n        \"Paulo\",\r\n        \"Gonçalves\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5555 6473\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/Patient?Content-Type=application/fhir+json",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"Patient"
+							],
+							"query": [
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json"
+								}
+							]
+						},
+						"description": "Testando a criação de paciente , com FHIR, ao fim desse teste o pacienete Paulo tem que estar criado"
+					},
+					"response": []
+				}
+			],
+			"description": "-- Aqui é explicado o objectivo dos testes do metdo post para criação de paciente",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d80ba12e-8495-4d4d-86ef-d21e0752c9c4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "da951232-d875-41b0-bec9-6c33cbc3dd42",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PutAtualziaPacient",
+			"item": [
+				{
+					"name": "AtualizarPacienteModificandoTelefoneResposta200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8984160c-a6d2-4eef-8be4-49cd6b7ecf9d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\":\"2719516\",\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://fhirtutorial.example/patient\",\r\n      \"value\": \"12345\"\r\n    }\r\n  ],\r\n  \"gender\": \"male\",\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Gonca\",\r\n      \"given\": [\r\n        \"Paulo\",\r\n        \"Gonçalves\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5555 6473\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/Patient/2719516",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"Patient",
+								"2719516"
+							]
+						},
+						"description": "Testando a criação de paciente , com FHIR, ao fim desse teste o pacienete Paulo tem que estar criado"
+					},
+					"response": []
+				}
+			],
+			"description": "--Descrição dos planejamentos de teste",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "31dbe812-9aec-44f5-ae72-2645fb4cfdc5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f4b3110-a5f6-4ea4-8146-3433029b69cc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "552dff46-070b-4771-8ee0-a0d78d654357",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bac13549-1ffd-4374-b2c1-5b936534aa65",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

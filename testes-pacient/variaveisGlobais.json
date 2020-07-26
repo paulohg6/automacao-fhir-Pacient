@@ -1,0 +1,14 @@
+{
+	"id": "4de0f774-3892-4cd7-8048-0fb8998bb525",
+	"values": [
+		{
+			"key": "url_base",
+			"value": "http://hapi.fhir.org/baseDstu3",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2020-07-24T18:37:00.164Z",
+	"_postman_exported_using": "Postman/7.28.0"
+}
