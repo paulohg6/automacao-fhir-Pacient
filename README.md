@@ -14,7 +14,6 @@ dentro dele modifique a url que está em value, para a url do seu servidor.
 	"values": [
 		{
             "key": "url_base",
-            // Modifque o valor a baixo para a url do seu servidor
 			"value": "http://hapi.fhir.org/baseDstu3",
 			"enabled": true
 		}
