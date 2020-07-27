@@ -5,7 +5,7 @@
 
 Abra o arquivo variaveisGlobais.json contido dentro da pasta testes-pacient
 
-dentro dele modifique a url que está em value, para a url do seu servidor.
+dentro dele modifique a url que está em value (http://hapi.fhir.org/baseDstu3), para a url do seu servidor.
 
 ```json
 
@@ -30,10 +30,11 @@ Após fazer apontar a url base para o seu servidor basta apenas entrar na pasta 
 
 ```javascript
 
-newman run Pacient.json -r htmlextra --reporter-htmlextra-export ./results/report.html
+newman run Pacient.json -e variaveisGlobais.json -r htmlextra --reporter-htmlextra-export ./results/report.html
 
 ```
 
+Na pasta results, estara o html com os resultados da exacução
 
 
 ## Importando a Colecion e Enviroment para o postman
