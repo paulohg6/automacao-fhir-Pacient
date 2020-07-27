@@ -1,5 +1,6 @@
 # Executando o projeto de automação
 
+Os testes se encontram na pasta testes-pacient
 
 ## Modificando Apenas a URL do servidor para executar os testes
 
