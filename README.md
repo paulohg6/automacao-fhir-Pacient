@@ -1,15 +1,17 @@
-# Executando o projeto de automação
+## Testes
 
-Os testes se encontram na pasta testes-pacient
+Os testes estão disponíveis na pasta [testes-pacient](./testes-pacient). 
 
-## Modificando Apenas a URL do servidor para executar os testes
+## Processo de criação de testes
 
-Abra o arquivo variaveisGlobais.json contido dentro da pasta testes-pacient
+Descreva como criar os testes nesta seção.
 
-dentro dele modifique a url que está em value (http://hapi.fhir.org/baseDstu3), para a url do seu servidor.
+## Configuração para execução dos testes
+
+Modifique o arquivo **variaveisGlobais.json**, ilustrado abaxio, para apontar para o servidor a ser testado.
+A propriedade de chave **value** deve indicar a URL do servidor. 
 
 ```json
-
 {
 	"id": "4de0f774-3892-4cd7-8048-0fb8998bb525",
 	"values": [
@@ -27,18 +29,16 @@ dentro dele modifique a url que está em value (http://hapi.fhir.org/baseDstu3),
 
 ```
 
-Após fazer apontar a url base para o seu servidor basta apenas entrar na pasta testes-pacient via cmd e executar o seguinte comando:
+Após a alteração, execute o seguinte comando:
 
-```javascript
-
+```bash
 newman run Pacient.json -e variaveisGlobais.json -r htmlextra --reporter-htmlextra-export ./results/report.html
-
 ```
 
-Na pasta results, estara o html com os resultados da exacução
+Este comando produz no formato HTML os resultados da execução dos testes definidos no arquivo **Pacient.json**.
 
 
-## Importando a Colecion e Enviroment para o postman
+## Importando a Collecion e Enviroment para o postman
 
 Para importar o projeto no postman e executar os seus testes, você deve seguir os seguintes passos
 
