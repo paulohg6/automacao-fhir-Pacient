@@ -44,13 +44,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{url_base}}/Patient/2719516",
+							"raw": "{{url_base}}/Patient/2719516/",
 							"host": [
 								"{{url_base}}"
 							],
 							"path": [
 								"Patient",
-								"2719516"
+								"2719516",
+								""
 							]
 						},
 						"description": "O Retorno da informação do paciente 2719516"
@@ -214,7 +215,7 @@
 			"name": "ValidarHeaderArquivo",
 			"item": [
 				{
-					"name": "RecuperandoPacientePeloIDValido2719516Reposta200 Copy",
+					"name": "RecuperandoPacientePeloIDValido2719516Reposta200ValidandoHeader",
 					"event": [
 						{
 							"listen": "test",
@@ -258,7 +259,7 @@
 								"2719516"
 							]
 						},
-						"description": "O Retorno da informação do paciente 2719516"
+						"description": "O Retorno da informação do paciente 2719516, validando o header do JSON de retorno"
 					},
 					"response": []
 				}
